@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 16:39:03 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/20 16:47:15 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/07/21 12:44:44 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class HumanB
 {
 	private:
-		std::string _name;
-		Weapon		*_weapon;
+		std::string name;
+		Weapon		*weapon;
 	public:
 		HumanB(std::string name);
 		~HumanB(void);

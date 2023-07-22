@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 16:44:11 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/20 16:47:39 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/07/21 13:35:51 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int main()
 	bob.attack();
 	club.setType("some other type of club");
 	bob.attack();
-	/*{
-	Weapon club = Weapon("crude spiked club");
+
+	/*Weapon club = Weapon("crude spiked club");
 
 	HumanB jim("Jim");
 	jim.setWeapon(club);
 	jim.attack();
 	club.setType("some other type of club");
-	jim.attack();
-	}*/
+	jim.attack();*/
+
 	return 0;
 }

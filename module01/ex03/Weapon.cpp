@@ -6,11 +6,16 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 16:32:06 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/20 16:33:26 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/07/21 12:33:38 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+
+Weapon::Weapon(void)
+{
+	return ;
+}
 
 Weapon::Weapon(std::string type)
 {

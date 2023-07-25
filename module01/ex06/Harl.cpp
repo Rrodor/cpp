@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:00:11 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/22 19:54:38 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/07/25 13:56:47 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,10 @@ void	Harl::complain(std::string level)
 	{
 		case 0:
 			Harl::debug();
-			//break;
 		case 1:
 			Harl::info();
-			//break;
 		case 2:
 			Harl::warning();
-			//break;
 		case 3:
 			Harl::error();
 			break;

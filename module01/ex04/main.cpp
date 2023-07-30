@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:36:05 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/22 16:16:33 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/07/29 22:55:17 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,6 @@
 #include <string>
 #include <cstring>
 #include <fstream>
-
-/*std::string replaceline(std::string line, std::string s1, std::string s2)
-{
-	size_t	i = 0;
-	size_t	j = 0;
-	size_t	k = 0;
-	//size_t	len = s1.length();
-	char res[100];
-
-	while (line[k])
-	{
-		if (strncmp(&line[i], s1.c_str(), s1.length()) == 0)
-		{
-			std::cout << line[i] << std::endl;
-			j = 0;
-			while (j < s2.length())
-			{
-				res[i] = s2[j];
-				i++;
-				j++;
-			}
-			k += s1.length();
-		}
-		else
-		{
-			res[i] = line[k];
-			i++;
-			k++;
-		}
-	}
-	res[i] = '\0';
-	return (res);
-}*/
 
 void	replaceline(std::string &str, std::string s1, std::string s2)
 {
@@ -61,7 +28,7 @@ void	replaceline(std::string &str, std::string s1, std::string s2)
 
 int main(int argc, char **argv)
 {
-	std::ifstream	file;
+	std::ifstream	file(argv[1]);
 	std::string		namereplace;
 	std::string		line;
 
@@ -73,7 +40,7 @@ int main(int argc, char **argv)
 	namereplace = argv[1];
 	namereplace.append(".replace");
 	std::ofstream outfile(namereplace.c_str());
-	file.open(argv[1]);
+	//file.open(argv[1]);
 	if (file.is_open())
 	{
 		while (getline(file, line))

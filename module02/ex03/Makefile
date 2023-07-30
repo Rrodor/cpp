@@ -1,5 +1,5 @@
-NAME= Zombie
-SRC= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+NAME= a.out
+SRC= main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -4,9 +4,6 @@ OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp
-	g++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
-
 $(NAME): $(OBJ)
 	g++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 01:46:16 by rrodor            #+#    #+#             */
-/*   Updated: 2023/07/30 02:05:52 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/08/01 15:09:43 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed A = (point.x - b.x) * (a.y - b.y) - (a.x - b.x) * (point.y - b.y);
-	Fixed B = (point.x - c.x) * (b.y - c.y) - (b.x - c.x) * (point.y - c.y);
-	Fixed C = (point.x - a.x) * (c.y - a.y) - (c.x - a.x) * (point.y - a.y);
+	Fixed A = (point.getPointx() - b.getPointx()) * (a.getPointy() - b.getPointy()) - (a.getPointx() - b.getPointx()) * (point.getPointy() - b.getPointy());
+	Fixed B = (point.getPointx() - c.getPointx()) * (b.getPointy() - c.getPointy()) - (b.getPointx() - c.getPointx()) * (point.getPointy() - c.getPointy());
+	Fixed C = (point.getPointx() - a.getPointx()) * (c.getPointy() - a.getPointy()) - (c.getPointx() - a.getPointx()) * (point.getPointy() - a.getPointy());
 
 	if (A < 0 && B < 0 && C < 0)
-		return (true)
+		return (true);
 	else if (A > 0 && B > 0 && C > 0)
-		return (true)
+		return (true);
 	else
-		return (false)
+		return (false);
 }
 

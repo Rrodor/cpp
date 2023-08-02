@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/02 14:29:23 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/02 14:59:41 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#pragma once
 
-Point::Point(void)
-{
-}
+#include "Animal.hpp"
 
-Point::Point(float const a, float const b) : x(a), y(b)
-{
-}
 
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
+class Cat : public Animal
 {
-}
+	public:
+		Cat();
+		Cat( Cat const & src );
+		~Cat();
+		Cat &		operator=( Cat const & rhs );
 
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
-}
+		void		makeSound() const;
+};

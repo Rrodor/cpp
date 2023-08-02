@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/02 18:13:34 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/02 18:19:49 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#pragma once
 
-Point::Point(void)
-{
-}
+#include <iostream>
 
-Point::Point(float const a, float const b) : x(a), y(b)
+class WrongAnimal
 {
-}
+	protected:
+		std::string		_type;
+	public:
+		WrongAnimal();
+		WrongAnimal( WrongAnimal const & src );
+		virtual ~WrongAnimal();
+		WrongAnimal &		operator=( WrongAnimal const & rhs );
 
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
-{
-}
-
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
-}
+		std::string		getType() const;
+		void		makeSound() const;
+};

@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/01 17:31:18 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/02 11:22:20 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#pragma once
 
-Point::Point(void)
-{
-}
+#include <iostream>
+#include "ClapTrap.hpp"
 
-Point::Point(float const a, float const b) : x(a), y(b)
+class ScavTrap : virtual public ClapTrap
 {
-}
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap & operator=(ScavTrap const &rhs);
+		~ScavTrap();
 
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
-{
-}
-
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
-}
+		void	guardGate(void);
+};

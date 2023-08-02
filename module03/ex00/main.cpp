@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/01 17:07:23 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/01 17:13:42 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "ClapTrap.hpp"
 
-Point::Point(void)
+int main()
 {
-}
+	ClapTrap P1("P1");
+	ClapTrap P2("P2");
 
-Point::Point(float const a, float const b) : x(a), y(b)
-{
-}
-
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
-{
-}
-
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
+	P1.attack("P2");
+	P2.takeDamage(10);
+	P2.beRepaired(10);
+	return (0);
 }

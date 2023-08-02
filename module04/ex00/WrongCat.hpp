@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/02 18:17:09 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/02 18:17:24 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#pragma once
 
-Point::Point(void)
-{
-}
+#include "WrongAnimal.hpp"
 
-Point::Point(float const a, float const b) : x(a), y(b)
+class WrongCat : public WrongAnimal
 {
-}
-
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
-{
-}
-
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
-}
+	public:
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		virtual ~WrongCat();
+		WrongCat &		operator=( WrongCat const & rhs );
+		void	makeSound() const;
+};

@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 02:12:18 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/01 14:52:53 by rrodor           ###   ########.fr       */
+/*   Created: 2023/08/01 17:07:23 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/01 19:14:07 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-Point::Point(void)
+int main()
 {
-}
+	ScavTrap P1("P1");
 
-Point::Point(float const a, float const b) : x(a), y(b)
-{
-}
-
-Point::Point(Point const &p) : x(p.getPointx()), y(p.getPointy())
-{
-}
-
-Point & Point::operator=(Point &rhs)
-{
-	return (rhs);
-}
-
-Point::~Point()
-{
-}
-
-Fixed	Point::getPointx(void) const
-{
-	return this->x;
-}
-
-Fixed	Point::getPointy(void) const
-{
-	return this->y;
+	P1.attack("ennemy");
+	P1.takeDamage(20);
+	P1.beRepaired(10);
+	P1.guardGate();
+	return (0);
 }

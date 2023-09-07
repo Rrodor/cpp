@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 21:23:48 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/02 15:39:13 by rrodor           ###   ########.fr       */
+/*   Created: 2023/09/07 21:27:28 by rrodor            #+#    #+#             */
+/*   Updated: 2023/09/07 21:28:26 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-#include <iomanip>
+#include <iostream>
+#include <string>
 
-int		main(int ac, char **av)
+typedef struct s_Data
 {
-	if (ac != 2)
-	{
-		std::cout << "Usage: ./convert [string]" << std::endl;
-		return (0);
-	}
-	ScalarConverter sc;
-	sc.convert(av[1]);
-	return (0);
-}
+	std::string	s;
+	int			n;
+	double		d;
+	float		f;
+}				Data;

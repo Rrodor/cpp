@@ -1,5 +1,5 @@
-NAME= convert
-SRC= main.cpp ScalarConverter.cpp
+NAME= typeIdentifier
+SRC= main.cpp Base.cpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

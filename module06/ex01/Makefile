@@ -1,5 +1,5 @@
-NAME= convert
-SRC= main.cpp ScalarConverter.cpp
+NAME= serializer
+SRC= main.cpp Serializer.cpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

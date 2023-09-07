@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 21:23:48 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/02 15:39:13 by rrodor           ###   ########.fr       */
+/*   Created: 2023/09/05 17:54:39 by rrodor            #+#    #+#             */
+/*   Updated: 2023/09/07 21:54:53 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-#include <iomanip>
+#include <iostream>
+#include <string>
+#include "Data.hpp"
 
-int		main(int ac, char **av)
+class Serializer
 {
-	if (ac != 2)
-	{
-		std::cout << "Usage: ./convert [string]" << std::endl;
-		return (0);
-	}
-	ScalarConverter sc;
-	sc.convert(av[1]);
-	return (0);
-}
+	public:
+		Serializer(void);
+		Serializer(Serializer const & src);
+		Serializer & operator=(Serializer const & rhs);
+		~Serializer(void);
+
+		uintptr_t	serialize(Data *ptr);
+		Data		*deserialize(uintptr_t raw);
+};

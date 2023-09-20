@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 10:37:45 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/20 17:09:23 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:07:45 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main()
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
+
+	std::cout << "top = " << mstack.top() << std::endl;
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -82,8 +84,8 @@ int main()
 
 	while (lit != lite)
 	{
-		std::cout << *lit << std::endl;
-		++lit;
+		lite--;
+		std::cout << *lite << std::endl;
 	}
 
 	std::list<int> l(list);

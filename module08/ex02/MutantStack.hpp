@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 10:24:14 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/20 16:54:10 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:04:51 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ MutantStack<T>::~MutantStack()
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
-	return (this->c.begin());
+	return (std::stack<T>::c.begin());
 }
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end()
 {
-	return (this->c.end());
+	return (std::stack<T>::c.end());
 }
 

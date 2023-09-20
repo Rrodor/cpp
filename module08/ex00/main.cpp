@@ -5,39 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 01:09:39 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/20 18:44:56 by rrodor           ###   ########.fr       */
+/*   Created: 2023/09/14 15:47:01 by rrodor            #+#    #+#             */
+/*   Updated: 2023/09/14 16:29:55 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-#include <iostream>
+#include "easyfind.hpp"
 
-template <typename T>
-void	addone(T &i)
+int main()
 {
-	i++;
-}
+	std::vector<int> v = {2, 3, 9, 5};
+	std::list<int> l = {2, 3, 9, 5};
+	int n = 3;
+	int	i = easyfind<std::vector<int>>(v, n);
+	int	j = easyfind<std::list<int>>(l, n);
 
-template <typename T>
-void	print(T &i)
-{
-	std::cout << i;
-	return;
-}
-
-int	main()
-{
-	int array[] = {1,2,3,4,5,6,7};
-	char str[] = "kiffance";
-
-	iter(array, 7, print<int>);
-	std::cout << std::endl;
-	iter(array, 7, addone<int>);
-	std::cout << "addone use" << std::endl;
-	iter(array, 7, print<int>);
-	std::cout << std::endl;
-	iter(str, 8, print<char>);
-	std::cout << std::endl;
+	if (i >= 0)
+		std::cout << "the element index is " << i << " in the vector" << std::endl;
+	else
+		std::cout << "Error : unable to find the element in the vector" << std::endl;
+	if (j >= 0)
+		std::cout << "the element index is " << j << " in the list" << std::endl;
+	else
+		std::cout << "Error : unable to find the element in the list" << std::endl;
 	return (0);
 }

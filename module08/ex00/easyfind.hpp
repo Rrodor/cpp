@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 01:05:40 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/20 18:42:11 by rrodor           ###   ########.fr       */
+/*   Created: 2023/09/14 15:22:38 by rrodor            #+#    #+#             */
+/*   Updated: 2023/09/16 14:29:43 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T> void iter(T *array, int lenght, void (*function)(T&))
+#include <algorithm>
+#include <vector>
+#include <list>
+#include <string>
+#include <iostream>
+
+template <typename T> int easyfind(T c, int n)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	typename T::const_iterator it;
+
+	it = std::find (c.begin(), c.end(), n);
+	if (it == std::end(c) && *it != n)
+		return (-1);
+	else
+		return (*it);
 }

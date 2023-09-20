@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 14:58:19 by rrodor            #+#    #+#             */
-/*   Updated: 2023/08/15 16:24:32 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/16 17:17:59 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+
 	if (alpha)
 		delete alpha;
 	if (beta)

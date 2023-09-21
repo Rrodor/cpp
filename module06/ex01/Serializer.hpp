@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:54:39 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/07 21:54:53 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 14:06:25 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdint.h>
 #include "Data.hpp"
 
 class Serializer
@@ -24,6 +25,6 @@ class Serializer
 		Serializer & operator=(Serializer const & rhs);
 		~Serializer(void);
 
-		uintptr_t	serialize(Data *ptr);
-		Data		*deserialize(uintptr_t raw);
+		static uintptr_t	serialize(Data *ptr);
+		static Data		*deserialize(uintptr_t raw);
 };

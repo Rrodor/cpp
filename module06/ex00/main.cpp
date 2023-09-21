@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 21:23:48 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/02 15:39:13 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 13:38:31 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int		main(int ac, char **av)
 		std::cout << "Usage: ./convert [string]" << std::endl;
 		return (0);
 	}
-	ScalarConverter sc;
-	sc.convert(av[1]);
+	ScalarConverter::convert(av[1]);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:57:34 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/07 21:54:40 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 14:08:57 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Serializer::Serializer(Serializer const & src)
 
 Serializer & Serializer::operator=(Serializer const & rhs)
 {
+	*this = rhs;
 	return *this;
 }
 

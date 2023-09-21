@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 22:20:02 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/08 00:40:24 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 14:28:42 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "C.hpp"
 #include <time.h>
 #include <stdlib.h>
+#include <stdexcept>
 #include <iostream>
 
 Base	*generate(void)
@@ -60,27 +61,30 @@ void	identify(Base &p)
 	try
 	{
 		A	&derivA = dynamic_cast<A &>(p);
+		(void)derivA;
 		std::cout << "reference identifier: this is a type A" << std::endl;
 	}
-	catch(std::bad_cast)
+	catch(std::exception &e)
 	{
 	}
 
 	try
 	{
 		B	&derivB = dynamic_cast<B &>(p);
+		(void)derivB;
 		std::cout << "reference identifier: this is a type B" << std::endl;
 	}
-	catch(std::bad_cast)
+	catch(std::exception &e)
 	{
 	}
 
 	try
 	{
 		C	&derivC = dynamic_cast<C &>(p);
+		(void)derivC;
 		std::cout << "reference identifier: this is a type C" << std::endl;
 	}
-	catch(std::bad_cast)
+	catch(std::exception &e)
 	{
 	}
 }

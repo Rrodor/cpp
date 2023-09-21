@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:04:54 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/21 13:57:40 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 16:44:59 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,11 @@
 
 class ScalarConverter
 {
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const & src);
-
 		ScalarConverter & operator=(ScalarConverter const & rhs);
-
 		~ScalarConverter();
-
+	public:
 		static void	convert(std::string str);
-
-		std::string	getChar() const;
-		int			getInt() const;
-		float		getFloat() const;
-		double		getDouble() const;
 };

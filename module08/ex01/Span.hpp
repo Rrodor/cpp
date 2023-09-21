@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:14:32 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/18 23:07:36 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:34:58 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Span
 
 		Span(unsigned int n);
 		void	addNumber(int n);
-		void	addRange(int begin, int last);
+		void	addRange(std::vector<int>::iterator begin, std::vector<int>::iterator last);
 		int		shortestSpan();
 		int		longestSpan();
 

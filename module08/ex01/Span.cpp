@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:25:37 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/18 23:07:04 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:34:44 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,15 @@ void	Span::addNumber(int n)
 	}
 }
 
-void	Span::addRange(int begin, int end)
+void	Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	if (end < begin)
+	if (_size + std::distance(begin, end) > _sizeMax)
+		throw Span::FullSpanException();
+	else
 	{
-		std::cout << "Error: invalid order" << std::endl;
+		_span.insert(_span.end(), begin, end);
+		_size += std::distance(begin, end);
 	}
-	if (abs(end - begin) > _sizeMax - _size)
-	{
-		std::cout << "Error: Array is full" << std::endl;
-		return ;
-	}
-	std::vector<int> vec(end - begin);
-	std::iota(vec.begin(), vec.end(), begin);
-	_span.insert(_span.end(), vec.begin(), vec.end());
-	_size += end - begin;
 }
 
 int		Span::shortestSpan()
@@ -94,7 +88,7 @@ int		Span::shortestSpan()
 	int					t = 2147483647;
 
 	sort(vec.begin(), vec.end());
-	for (int i = 0; i + 1 !=  vec.size(); i++)
+	for (unsigned int i = 0; i + 1 !=  vec.size(); i++)
 	{
 		if (abs(vec[i] - vec[i + 1]) < t)
 			t = abs(vec[i] - vec[i + 1]);

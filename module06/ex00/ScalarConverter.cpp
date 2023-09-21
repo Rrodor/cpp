@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:43:02 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/21 13:57:09 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 17:05:15 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 #define ERROR		4
 #define NAN			5
 #define MININF		6
+#define MININFF		8
 #define MAXINF		7
+#define MAXINFF		9
 
 ScalarConverter::ScalarConverter()
 {
@@ -43,6 +45,7 @@ ScalarConverter & ScalarConverter::operator=(ScalarConverter const & rhs)
 void	ScalarConverter::convert(std::string str)
 {
 	int i = 0;
+	int n = 1;
 	std::string tmp = "'";
 	int	type;
 	int	_int;
@@ -50,16 +53,27 @@ void	ScalarConverter::convert(std::string str)
 	double _double;
 	std::string _char;
 
+	if (str.length() == 0)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
+	if (str[0] == '-')
+	{
+		n = -1;
+		str = str.substr(1, str.length());
+	}
 	if (std::isprint(str[0]) && !std::isdigit(str[0]))
 	{
 		if (str.length() == 1)
 			type = TCHAR;
-		else if (str == "nan")
+		else if (str == "nan" || str == "nanf")
 			type = NAN;
-		else if (str == "+inf")
+		else if (str == "+inf" || str == "+inff" || str == "inf" || str == "inff")
 			type = MAXINF;
-		else if (str == "-inf")
-			type = MININF;
 		else
 			type = ERROR;
 	}
@@ -162,10 +176,29 @@ void	ScalarConverter::convert(std::string str)
 			break;
 	}
 
-	std::cout << "char: " << _char << std::endl;
-	std::cout << "int: " << _int << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(1) << _double << std::endl;
+	if (type == MAXINF && n < 0)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: -2147483648" << std::endl;
+		std::cout << "float: " << -FLT_MAX << std::endl;
+		std::cout << "double: " << -DBL_MAX << std::endl;
+		return ;
+	}
+	if (type == MAXINF)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: 2147483647" << std::endl;
+		std::cout << "float: " << FLT_MAX << std::endl;
+		std::cout << "double: " << DBL_MAX << std::endl;
+		return ;
+	}
+	if (n < 0)
+		std::cout << "char: impossible" << std::endl;
+	else
+		std::cout << "char: " << _char << std::endl;
+	std::cout << "int: " << n * _int << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << n * _float << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << n * _double << std::endl;
 
 }
 

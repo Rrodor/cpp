@@ -6,11 +6,12 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:26:25 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/18 23:08:37 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:45:59 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <list>
 
 int main()
 {
@@ -32,7 +33,7 @@ int main()
 
 	std::vector<int>	vec = sp.getSpan();
 	std::cout << "vector is : ";
-	for (int i = 0; i < sp.getSize(); i++)
+	for (unsigned int i = 0; i < sp.getSize(); i++)
 		std::cout << vec[i] << " ";
 	std::cout << std::endl;
 
@@ -42,15 +43,18 @@ int main()
 	std::vector<int>	v = sp.getSpan();
 
 	std::cout << "vector is : ";
-	for (int i = 0; i < sp.getSize(); i++)
+	for (unsigned int i = 0; i < sp.getSize(); i++)
 		std::cout << v[i] << " ";
 	std::cout << std::endl;
 
 	Span sp2 = Span(10000);
-	sp2.addRange(5,10005);
+	std::vector<int> vc;
+	for (int i = 0; i < 10000; i++)
+		vc.push_back(i);
+	sp2.addRange(vc.begin(),vc.end());
 	std::vector<int>	vec2 = sp2.getSpan();
 	std::cout << "new vector is : ";
-	for (int i = 0; i < sp2.getSize(); i++)
+	for (unsigned int i = 0; i < sp2.getSize(); i++)
 		std::cout << vec2[i] << " ";
 	std::cout << std::endl;
 	return 0;

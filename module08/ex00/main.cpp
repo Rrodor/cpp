@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:47:01 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/14 16:29:55 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:09:30 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 int main()
 {
-	std::vector<int> v = {2, 3, 9, 5};
-	std::list<int> l = {2, 3, 9, 5};
+	std::vector<int> v;
+	std::list<int> l;
+
+	v.push_back(1);
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(4);
+	v.push_back(5);
+	l.push_back(1);
+	l.push_back(2);
+	l.push_back(3);
+	l.push_back(4);
+	l.push_back(5);
 	int n = 3;
-	int	i = easyfind<std::vector<int>>(v, n);
-	int	j = easyfind<std::list<int>>(l, n);
+	int	i = easyfind< std::vector<int> >(v, n);
+	int	j = easyfind< std::list<int> >(l, n);
 
 	if (i >= 0)
 		std::cout << "the element index is " << i << " in the vector" << std::endl;

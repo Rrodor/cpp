@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 01:36:43 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/20 18:46:28 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/21 14:33:29 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ template <class T>
 Array<T>::Array(unsigned int n)
 {
 	this->_array = new T[n];
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		this->_array[i] = 0;
 	this->_size = n;
 }

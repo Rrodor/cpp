@@ -6,7 +6,7 @@
 /*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:10:34 by rrodor            #+#    #+#             */
-/*   Updated: 2023/09/26 12:47:07 by rrodor           ###   ########.fr       */
+/*   Updated: 2023/09/28 18:57:29 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,26 @@ void BitcoinExchange::findDate(std::string date, float n)
 		}
 		else
 		{
-			while (this->_data[ndate] == 0 && ndate[0] > 2008)
+			while (this->_data[ndate] == 0 && (ndate[0] > 2008))
 			{
+				if (ndate[0] < 2010)
+				{
+					std::cout << sdate << " => " << n << " = ";
+					std::cout << '0' << std::endl;
+					return ;
+				}
+				else if (ndate[0] == 2010 && ndate[1] < 8)
+				{
+					std::cout << sdate << " => " << n << " = ";
+					std::cout << '0' << std::endl;
+					return ;
+				}
+				else if (ndate[0] == 2010 && ndate[1] == 8 && ndate[2] <= 19)
+				{
+					std::cout << sdate << " => " << n << " = ";
+					std::cout << '0' << std::endl;
+					return ;
+				}
 				if (ndate[2] == 1)
 				{
 					if (ndate[1] == 1)
@@ -153,7 +171,7 @@ int	BitcoinExchange::ExchangeValue(std::string str)
 			line.append("|");
 			date = strtok((char*)line.c_str(), "|");
 			n = std::atof(strtok(NULL, "|"));
-			if (n > 21473647)
+			if (n > 2147483647.0)
 				std::cout << "Error: too large a number." << std::endl;
 			else if (date.find("-") != std::string::npos)
 				findDate(date, n);
